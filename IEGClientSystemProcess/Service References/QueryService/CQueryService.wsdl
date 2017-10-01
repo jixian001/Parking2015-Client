@@ -1,0 +1,1424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CQueryService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IQueryService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:50003/AutoParkingService/QueryService?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:50003/AutoParkingService/QueryService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50003/AutoParkingService/QueryService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" />
+      <xsd:import schemaLocation="http://localhost:50003/AutoParkingService/QueryService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TypedefLib" />
+      <xsd:import schemaLocation="http://localhost:50003/AutoParkingService/QueryService?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:50003/AutoParkingService/QueryService?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IQueryService_GetLEDContentList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLEDContentList" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetLEDContentList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLEDContentListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_UpdateLEDContentDtoList_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLEDContentDtoList" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_UpdateLEDContentDtoList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLEDContentDtoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetSendTelegramQueue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSendTelegramQueue" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetSendTelegramQueue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSendTelegramQueueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetSendTelegramQueueByEquipID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSendTelegramQueueByEquipID" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetSendTelegramQueueByEquipID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSendTelegramQueueByEquipIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_DeleteWorkQueueObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWorkQueueObject" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_DeleteWorkQueueObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWorkQueueObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetAllQueueForDisp_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllQueueForDisp" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetAllQueueForDisp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllQueueForDispResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_DeleteAllWorkQueue_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAllWorkQueue" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_DeleteAllWorkQueue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAllWorkQueueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetUserSetFixCardOutLimit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserSetFixCardOutLimit" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetUserSetFixCardOutLimit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserSetFixCardOutLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_SetUserSetFixCardOutLimit_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetUserSetFixCardOutLimit" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_SetUserSetFixCardOutLimit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetUserSetFixCardOutLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfig" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetOperatorList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperatorList" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetOperatorList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperatorListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_CheckPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPassword" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_CheckPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_UpdatePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePassword" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_UpdatePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_AddOperator_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOperator" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_AddOperator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOperatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetOperatorType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperatorType" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetOperatorType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperatorTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_DeleteOperator_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOperator" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_DeleteOperator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOperatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ReadICCardData_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadICCardData" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ReadICCardData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadICCardDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ReadICCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadICCard" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ReadICCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadICCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_AddNewICCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewICCard" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_AddNewICCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewICCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryICCardInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryICCardInfo" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryICCardInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryICCardInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryICCardInfoByAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryICCardInfoByAddress" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryICCardInfoByAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryICCardInfoByAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryICCardInfoByPhyID_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryICCardInfoByPhyID" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryICCardInfoByPhyID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryICCardInfoByPhyIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryICCodeByPhysic_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryICCodeByPhysic" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryICCodeByPhysic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryICCodeByPhysicResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_UpdateICCardInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateICCardInfo" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_UpdateICCardInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateICCardInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetFixReservedSizeCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixReservedSizeCount" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetFixReservedSizeCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixReservedSizeCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_BatchModifyICCardDeadLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:BatchModifyICCardDeadLine" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_BatchModifyICCardDeadLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BatchModifyICCardDeadLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_BatchModifyICCardTariffID_InputMessage">
+    <wsdl:part name="parameters" element="tns:BatchModifyICCardTariffID" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_BatchModifyICCardTariffID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BatchModifyICCardTariffIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryCUSTInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCUSTInfo" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryCUSTInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCUSTInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryCUSTInfoByStr_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCUSTInfoByStr" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryCUSTInfoByStr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCUSTInfoByStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_BoundICCardForCUST_InputMessage">
+    <wsdl:part name="parameters" element="tns:BoundICCardForCUST" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_BoundICCardForCUST_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BoundICCardForCUSTResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ModifyCUSTInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyCUSTInfo" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ModifyCUSTInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyCUSTInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_DeleteCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_DeleteCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryCarPOSNByAddr_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCarPOSNByAddr" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryCarPOSNByAddr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCarPOSNByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryCarPOSNByWareHouse_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCarPOSNByWareHouse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryCarPOSNByWareHouse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCarPOSNByWareHouseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryCarPOSNByCardID_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCarPOSNByCardID" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryCarPOSNByCardID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCarPOSNByCardIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetCarPOSNCountByType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarPOSNCountByType" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetCarPOSNCountByType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarPOSNCountByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetCarPOSNCountByStat_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarPOSNCountByStat" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetCarPOSNCountByStat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarPOSNCountByStatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetCarPOSNFreeOccupyCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarPOSNFreeOccupyCount" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetCarPOSNFreeOccupyCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarPOSNFreeOccupyCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetCarPLSNStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarPLSNStatus" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetCarPLSNStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarPLSNStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDeviceMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceMode" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDeviceMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDeviceStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceStatus" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDeviceStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDeviceStatusByAddr_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceStatusByAddr" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDeviceStatusByAddr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceStatusByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDeviceFault_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceFault" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDeviceFault_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceFaultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDeviceIDList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceIDList" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDeviceIDList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceIDListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDeviceStatusList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceStatusList" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDeviceStatusList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceStatusListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryWorkQueue_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryWorkQueue" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryWorkQueue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryWorkQueueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_DeleteWorkQueue_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWorkQueue" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_DeleteWorkQueue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWorkQueueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ModifWorkQueue_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifWorkQueue" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ModifWorkQueue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifWorkQueueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetICCardLogList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetICCardLogList" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetICCardLogList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetICCardLogListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_InsertSysLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSysLog" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_InsertSysLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSysLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetSystemLogList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemLogList" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetSystemLogList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemLogListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetTelegramLogList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelegramLogList" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetTelegramLogList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelegramLogListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDeviceStatusLogList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceStatusLogList" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDeviceStatusLogList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceStatusLogListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_InsertDeviceFaultLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDeviceFaultLog" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_InsertDeviceFaultLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDeviceFaultLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDeviceFaultLogList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceFaultLogList" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDeviceFaultLogList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceFaultLogListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetICCardLogListByContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetICCardLogListByContent" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetICCardLogListByContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetICCardLogListByContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetSystemLogListByContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemLogListByContent" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetSystemLogListByContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemLogListByContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetTelegramLogListByContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelegramLogListByContent" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetTelegramLogListByContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelegramLogListByContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetTelegramLogListByPLCContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelegramLogListByPLCContent" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetTelegramLogListByPLCContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelegramLogListByPLCContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDeviceStatusLogListByContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceStatusLogListByContent" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDeviceStatusLogListByContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceStatusLogListByContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDeviceFaultLogListByContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceFaultLogListByContent" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDeviceFaultLogListByContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceFaultLogListByContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetSoundList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSoundList" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetSoundList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSoundListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_UpdateSoundDto_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSoundDto" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_UpdateSoundDto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSoundDtoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_UpdateSoundDtoList_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSoundDtoList" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_UpdateSoundDtoList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSoundDtoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetTaskTypeList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskTypeList" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetTaskTypeList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskTypeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetTariffList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTariffList" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetTariffList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTariffListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_SaveTariff_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTariff" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_SaveTariff_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTariffResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_DeleteTariff_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTariff" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_DeleteTariff_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTariffResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ReadAndQueryParkingInfoB_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAndQueryParkingInfoB" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ReadAndQueryParkingInfoB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAndQueryParkingInfoBResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ReadAndQueryParkingInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAndQueryParkingInfo" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ReadAndQueryParkingInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAndQueryParkingInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryParkingInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryParkingInfo" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_QueryParkingInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryParkingInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetTariffByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTariffByID" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetTariffByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTariffByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ModifyLEDContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyLEDContent" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ModifyLEDContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyLEDContentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IQueryService">
+    <wsdl:operation name="GetLEDContentList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetLEDContentList" message="tns:IQueryService_GetLEDContentList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetLEDContentListResponse" message="tns:IQueryService_GetLEDContentList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLEDContentDtoList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/UpdateLEDContentDtoList" message="tns:IQueryService_UpdateLEDContentDtoList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/UpdateLEDContentDtoListResponse" message="tns:IQueryService_UpdateLEDContentDtoList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSendTelegramQueue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetSendTelegramQueue" message="tns:IQueryService_GetSendTelegramQueue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetSendTelegramQueueResponse" message="tns:IQueryService_GetSendTelegramQueue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSendTelegramQueueByEquipID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetSendTelegramQueueByEquipID" message="tns:IQueryService_GetSendTelegramQueueByEquipID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetSendTelegramQueueByEquipIDResponse" message="tns:IQueryService_GetSendTelegramQueueByEquipID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWorkQueueObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/DeleteWorkQueueObject" message="tns:IQueryService_DeleteWorkQueueObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/DeleteWorkQueueObjectResponse" message="tns:IQueryService_DeleteWorkQueueObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQueueForDisp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetAllQueueForDisp" message="tns:IQueryService_GetAllQueueForDisp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetAllQueueForDispResponse" message="tns:IQueryService_GetAllQueueForDisp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllWorkQueue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/DeleteAllWorkQueue" message="tns:IQueryService_DeleteAllWorkQueue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/DeleteAllWorkQueueResponse" message="tns:IQueryService_DeleteAllWorkQueue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSetFixCardOutLimit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetUserSetFixCardOutLimit" message="tns:IQueryService_GetUserSetFixCardOutLimit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetUserSetFixCardOutLimitResponse" message="tns:IQueryService_GetUserSetFixCardOutLimit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUserSetFixCardOutLimit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/SetUserSetFixCardOutLimit" message="tns:IQueryService_SetUserSetFixCardOutLimit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/SetUserSetFixCardOutLimitResponse" message="tns:IQueryService_SetUserSetFixCardOutLimit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetConfig" message="tns:IQueryService_GetConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetConfigResponse" message="tns:IQueryService_GetConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperatorList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetOperatorList" message="tns:IQueryService_GetOperatorList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetOperatorListResponse" message="tns:IQueryService_GetOperatorList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/CheckPassword" message="tns:IQueryService_CheckPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/CheckPasswordResponse" message="tns:IQueryService_CheckPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/UpdatePassword" message="tns:IQueryService_UpdatePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/UpdatePasswordResponse" message="tns:IQueryService_UpdatePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOperator">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/AddOperator" message="tns:IQueryService_AddOperator_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/AddOperatorResponse" message="tns:IQueryService_AddOperator_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperatorType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetOperatorType" message="tns:IQueryService_GetOperatorType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetOperatorTypeResponse" message="tns:IQueryService_GetOperatorType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOperator">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/DeleteOperator" message="tns:IQueryService_DeleteOperator_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/DeleteOperatorResponse" message="tns:IQueryService_DeleteOperator_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadICCardData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/ReadICCardData" message="tns:IQueryService_ReadICCardData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/ReadICCardDataResponse" message="tns:IQueryService_ReadICCardData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadICCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/ReadICCard" message="tns:IQueryService_ReadICCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/ReadICCardResponse" message="tns:IQueryService_ReadICCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewICCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/AddNewICCard" message="tns:IQueryService_AddNewICCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/AddNewICCardResponse" message="tns:IQueryService_AddNewICCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryICCardInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/QueryICCardInfo" message="tns:IQueryService_QueryICCardInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/QueryICCardInfoResponse" message="tns:IQueryService_QueryICCardInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryICCardInfoByAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/QueryICCardInfoByAddress" message="tns:IQueryService_QueryICCardInfoByAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/QueryICCardInfoByAddressResponse" message="tns:IQueryService_QueryICCardInfoByAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryICCardInfoByPhyID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/QueryICCardInfoByPhyID" message="tns:IQueryService_QueryICCardInfoByPhyID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/QueryICCardInfoByPhyIDResponse" message="tns:IQueryService_QueryICCardInfoByPhyID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryICCodeByPhysic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/QueryICCodeByPhysic" message="tns:IQueryService_QueryICCodeByPhysic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/QueryICCodeByPhysicResponse" message="tns:IQueryService_QueryICCodeByPhysic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateICCardInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/UpdateICCardInfo" message="tns:IQueryService_UpdateICCardInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/UpdateICCardInfoResponse" message="tns:IQueryService_UpdateICCardInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixReservedSizeCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetFixReservedSizeCount" message="tns:IQueryService_GetFixReservedSizeCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetFixReservedSizeCountResponse" message="tns:IQueryService_GetFixReservedSizeCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BatchModifyICCardDeadLine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/BatchModifyICCardDeadLine" message="tns:IQueryService_BatchModifyICCardDeadLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/BatchModifyICCardDeadLineResponse" message="tns:IQueryService_BatchModifyICCardDeadLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BatchModifyICCardTariffID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/BatchModifyICCardTariffID" message="tns:IQueryService_BatchModifyICCardTariffID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/BatchModifyICCardTariffIDResponse" message="tns:IQueryService_BatchModifyICCardTariffID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCUSTInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/QueryCUSTInfo" message="tns:IQueryService_QueryCUSTInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/QueryCUSTInfoResponse" message="tns:IQueryService_QueryCUSTInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCUSTInfoByStr">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/QueryCUSTInfoByStr" message="tns:IQueryService_QueryCUSTInfoByStr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/QueryCUSTInfoByStrResponse" message="tns:IQueryService_QueryCUSTInfoByStr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BoundICCardForCUST">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/BoundICCardForCUST" message="tns:IQueryService_BoundICCardForCUST_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/BoundICCardForCUSTResponse" message="tns:IQueryService_BoundICCardForCUST_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCUSTInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/ModifyCUSTInfo" message="tns:IQueryService_ModifyCUSTInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/ModifyCUSTInfoResponse" message="tns:IQueryService_ModifyCUSTInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/DeleteCustomer" message="tns:IQueryService_DeleteCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/DeleteCustomerResponse" message="tns:IQueryService_DeleteCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCarPOSNByAddr">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/QueryCarPOSNByAddr" message="tns:IQueryService_QueryCarPOSNByAddr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/QueryCarPOSNByAddrResponse" message="tns:IQueryService_QueryCarPOSNByAddr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCarPOSNByWareHouse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/QueryCarPOSNByWareHouse" message="tns:IQueryService_QueryCarPOSNByWareHouse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/QueryCarPOSNByWareHouseResponse" message="tns:IQueryService_QueryCarPOSNByWareHouse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCarPOSNByCardID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/QueryCarPOSNByCardID" message="tns:IQueryService_QueryCarPOSNByCardID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/QueryCarPOSNByCardIDResponse" message="tns:IQueryService_QueryCarPOSNByCardID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarPOSNCountByType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetCarPOSNCountByType" message="tns:IQueryService_GetCarPOSNCountByType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetCarPOSNCountByTypeResponse" message="tns:IQueryService_GetCarPOSNCountByType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarPOSNCountByStat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetCarPOSNCountByStat" message="tns:IQueryService_GetCarPOSNCountByStat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetCarPOSNCountByStatResponse" message="tns:IQueryService_GetCarPOSNCountByStat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarPOSNFreeOccupyCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetCarPOSNFreeOccupyCount" message="tns:IQueryService_GetCarPOSNFreeOccupyCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetCarPOSNFreeOccupyCountResponse" message="tns:IQueryService_GetCarPOSNFreeOccupyCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarPLSNStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetCarPLSNStatus" message="tns:IQueryService_GetCarPLSNStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetCarPLSNStatusResponse" message="tns:IQueryService_GetCarPLSNStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetDeviceMode" message="tns:IQueryService_GetDeviceMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetDeviceModeResponse" message="tns:IQueryService_GetDeviceMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetDeviceStatus" message="tns:IQueryService_GetDeviceStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetDeviceStatusResponse" message="tns:IQueryService_GetDeviceStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceStatusByAddr">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetDeviceStatusByAddr" message="tns:IQueryService_GetDeviceStatusByAddr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetDeviceStatusByAddrResponse" message="tns:IQueryService_GetDeviceStatusByAddr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceFault">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetDeviceFault" message="tns:IQueryService_GetDeviceFault_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetDeviceFaultResponse" message="tns:IQueryService_GetDeviceFault_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceIDList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetDeviceIDList" message="tns:IQueryService_GetDeviceIDList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetDeviceIDListResponse" message="tns:IQueryService_GetDeviceIDList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceStatusList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetDeviceStatusList" message="tns:IQueryService_GetDeviceStatusList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetDeviceStatusListResponse" message="tns:IQueryService_GetDeviceStatusList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryWorkQueue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/QueryWorkQueue" message="tns:IQueryService_QueryWorkQueue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/QueryWorkQueueResponse" message="tns:IQueryService_QueryWorkQueue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWorkQueue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/DeleteWorkQueue" message="tns:IQueryService_DeleteWorkQueue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/DeleteWorkQueueResponse" message="tns:IQueryService_DeleteWorkQueue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifWorkQueue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/ModifWorkQueue" message="tns:IQueryService_ModifWorkQueue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/ModifWorkQueueResponse" message="tns:IQueryService_ModifWorkQueue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetICCardLogList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetICCardLogList" message="tns:IQueryService_GetICCardLogList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetICCardLogListResponse" message="tns:IQueryService_GetICCardLogList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSysLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/InsertSysLog" message="tns:IQueryService_InsertSysLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/InsertSysLogResponse" message="tns:IQueryService_InsertSysLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemLogList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetSystemLogList" message="tns:IQueryService_GetSystemLogList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetSystemLogListResponse" message="tns:IQueryService_GetSystemLogList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelegramLogList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetTelegramLogList" message="tns:IQueryService_GetTelegramLogList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetTelegramLogListResponse" message="tns:IQueryService_GetTelegramLogList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceStatusLogList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetDeviceStatusLogList" message="tns:IQueryService_GetDeviceStatusLogList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetDeviceStatusLogListResponse" message="tns:IQueryService_GetDeviceStatusLogList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDeviceFaultLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/InsertDeviceFaultLog" message="tns:IQueryService_InsertDeviceFaultLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/InsertDeviceFaultLogResponse" message="tns:IQueryService_InsertDeviceFaultLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceFaultLogList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetDeviceFaultLogList" message="tns:IQueryService_GetDeviceFaultLogList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetDeviceFaultLogListResponse" message="tns:IQueryService_GetDeviceFaultLogList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetICCardLogListByContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetICCardLogListByContent" message="tns:IQueryService_GetICCardLogListByContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetICCardLogListByContentResponse" message="tns:IQueryService_GetICCardLogListByContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemLogListByContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetSystemLogListByContent" message="tns:IQueryService_GetSystemLogListByContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetSystemLogListByContentResponse" message="tns:IQueryService_GetSystemLogListByContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelegramLogListByContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetTelegramLogListByContent" message="tns:IQueryService_GetTelegramLogListByContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetTelegramLogListByContentResponse" message="tns:IQueryService_GetTelegramLogListByContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelegramLogListByPLCContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetTelegramLogListByPLCContent" message="tns:IQueryService_GetTelegramLogListByPLCContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetTelegramLogListByPLCContentResponse" message="tns:IQueryService_GetTelegramLogListByPLCContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceStatusLogListByContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetDeviceStatusLogListByContent" message="tns:IQueryService_GetDeviceStatusLogListByContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetDeviceStatusLogListByContentResponse" message="tns:IQueryService_GetDeviceStatusLogListByContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceFaultLogListByContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetDeviceFaultLogListByContent" message="tns:IQueryService_GetDeviceFaultLogListByContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetDeviceFaultLogListByContentResponse" message="tns:IQueryService_GetDeviceFaultLogListByContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSoundList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetSoundList" message="tns:IQueryService_GetSoundList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetSoundListResponse" message="tns:IQueryService_GetSoundList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSoundDto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/UpdateSoundDto" message="tns:IQueryService_UpdateSoundDto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/UpdateSoundDtoResponse" message="tns:IQueryService_UpdateSoundDto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSoundDtoList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/UpdateSoundDtoList" message="tns:IQueryService_UpdateSoundDtoList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/UpdateSoundDtoListResponse" message="tns:IQueryService_UpdateSoundDtoList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskTypeList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetTaskTypeList" message="tns:IQueryService_GetTaskTypeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetTaskTypeListResponse" message="tns:IQueryService_GetTaskTypeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTariffList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetTariffList" message="tns:IQueryService_GetTariffList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetTariffListResponse" message="tns:IQueryService_GetTariffList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTariff">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/SaveTariff" message="tns:IQueryService_SaveTariff_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/SaveTariffResponse" message="tns:IQueryService_SaveTariff_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTariff">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/DeleteTariff" message="tns:IQueryService_DeleteTariff_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/DeleteTariffResponse" message="tns:IQueryService_DeleteTariff_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAndQueryParkingInfoB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/ReadAndQueryParkingInfoB" message="tns:IQueryService_ReadAndQueryParkingInfoB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/ReadAndQueryParkingInfoBResponse" message="tns:IQueryService_ReadAndQueryParkingInfoB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAndQueryParkingInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/ReadAndQueryParkingInfo" message="tns:IQueryService_ReadAndQueryParkingInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/ReadAndQueryParkingInfoResponse" message="tns:IQueryService_ReadAndQueryParkingInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryParkingInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/QueryParkingInfo" message="tns:IQueryService_QueryParkingInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/QueryParkingInfoResponse" message="tns:IQueryService_QueryParkingInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTariffByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetTariffByID" message="tns:IQueryService_GetTariffByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetTariffByIDResponse" message="tns:IQueryService_GetTariffByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyLEDContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/ModifyLEDContent" message="tns:IQueryService_ModifyLEDContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/ModifyLEDContentResponse" message="tns:IQueryService_ModifyLEDContent_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IQueryService" type="tns:IQueryService">
+    <wsp:PolicyReference URI="#WSHttpBinding_IQueryService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLEDContentList">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetLEDContentList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLEDContentDtoList">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/UpdateLEDContentDtoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSendTelegramQueue">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetSendTelegramQueue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSendTelegramQueueByEquipID">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetSendTelegramQueueByEquipID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWorkQueueObject">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/DeleteWorkQueueObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQueueForDisp">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetAllQueueForDisp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllWorkQueue">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/DeleteAllWorkQueue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSetFixCardOutLimit">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetUserSetFixCardOutLimit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUserSetFixCardOutLimit">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/SetUserSetFixCardOutLimit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfig">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetConfig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperatorList">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetOperatorList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPassword">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/CheckPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/UpdatePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOperator">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/AddOperator" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperatorType">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetOperatorType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOperator">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/DeleteOperator" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadICCardData">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/ReadICCardData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadICCard">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/ReadICCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewICCard">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/AddNewICCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryICCardInfo">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/QueryICCardInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryICCardInfoByAddress">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/QueryICCardInfoByAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryICCardInfoByPhyID">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/QueryICCardInfoByPhyID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryICCodeByPhysic">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/QueryICCodeByPhysic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateICCardInfo">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/UpdateICCardInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixReservedSizeCount">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetFixReservedSizeCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchModifyICCardDeadLine">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/BatchModifyICCardDeadLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchModifyICCardTariffID">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/BatchModifyICCardTariffID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCUSTInfo">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/QueryCUSTInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCUSTInfoByStr">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/QueryCUSTInfoByStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BoundICCardForCUST">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/BoundICCardForCUST" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCUSTInfo">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/ModifyCUSTInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomer">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/DeleteCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCarPOSNByAddr">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/QueryCarPOSNByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCarPOSNByWareHouse">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/QueryCarPOSNByWareHouse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCarPOSNByCardID">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/QueryCarPOSNByCardID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarPOSNCountByType">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetCarPOSNCountByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarPOSNCountByStat">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetCarPOSNCountByStat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarPOSNFreeOccupyCount">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetCarPOSNFreeOccupyCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarPLSNStatus">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetCarPLSNStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceMode">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetDeviceMode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceStatus">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetDeviceStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceStatusByAddr">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetDeviceStatusByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceFault">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetDeviceFault" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceIDList">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetDeviceIDList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceStatusList">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetDeviceStatusList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryWorkQueue">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/QueryWorkQueue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWorkQueue">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/DeleteWorkQueue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifWorkQueue">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/ModifWorkQueue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetICCardLogList">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetICCardLogList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSysLog">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/InsertSysLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemLogList">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetSystemLogList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTelegramLogList">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetTelegramLogList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceStatusLogList">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetDeviceStatusLogList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDeviceFaultLog">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/InsertDeviceFaultLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceFaultLogList">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetDeviceFaultLogList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetICCardLogListByContent">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetICCardLogListByContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemLogListByContent">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetSystemLogListByContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTelegramLogListByContent">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetTelegramLogListByContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTelegramLogListByPLCContent">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetTelegramLogListByPLCContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceStatusLogListByContent">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetDeviceStatusLogListByContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceFaultLogListByContent">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetDeviceFaultLogListByContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSoundList">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetSoundList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSoundDto">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/UpdateSoundDto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSoundDtoList">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/UpdateSoundDtoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskTypeList">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetTaskTypeList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTariffList">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetTariffList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTariff">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/SaveTariff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTariff">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/DeleteTariff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAndQueryParkingInfoB">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/ReadAndQueryParkingInfoB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAndQueryParkingInfo">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/ReadAndQueryParkingInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryParkingInfo">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/QueryParkingInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTariffByID">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetTariffByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyLEDContent">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/ModifyLEDContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CQueryService">
+    <wsdl:port name="WSHttpBinding_IQueryService" binding="tns:WSHttpBinding_IQueryService">
+      <soap12:address location="http://localhost:50003/AutoParkingService/QueryService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:50003/AutoParkingService/QueryService</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

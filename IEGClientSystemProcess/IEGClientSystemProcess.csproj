@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7E0CE71D-DF58-482B-AA02-B057A96D0CE5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IEGClientSystemProcess</RootNamespace>
+    <AssemblyName>IEGClientSystemProcess</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>..\bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>..\bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>aa.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LOGManagementLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\x64\Debug\LOGManagementLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\PushService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\QueryService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\CarLocationPanelLib.ClientAccessService.CCarLocationDto.datasource" />
+    <None Include="Properties\DataSources\CarLocationPanelLib.ClientAccessService.CDeviceFaultDto.datasource" />
+    <None Include="Properties\DataSources\CarLocationPanelLib.ClientAccessService.CDeviceFaultLogDto.datasource" />
+    <None Include="Properties\DataSources\CarLocationPanelLib.ClientAccessService.CDeviceStatusDto.datasource" />
+    <None Include="Properties\DataSources\CarLocationPanelLib.ClientAccessService.CDeviceStatusLogDto.datasource" />
+    <None Include="Properties\DataSources\CarLocationPanelLib.ClientAccessService.CICCardDto.datasource" />
+    <None Include="Properties\DataSources\CarLocationPanelLib.ClientAccessService.CICCardLogDto.datasource" />
+    <None Include="Properties\DataSources\CarLocationPanelLib.ClientAccessService.COperatorDto.datasource" />
+    <None Include="Properties\DataSources\CarLocationPanelLib.ClientAccessService.CSoundDto.datasource" />
+    <None Include="Properties\DataSources\CarLocationPanelLib.ClientAccessService.CSystemLogDto.datasource" />
+    <None Include="Properties\DataSources\CarLocationPanelLib.ClientAccessService.CTariffDto.datasource" />
+    <None Include="Properties\DataSources\CarLocationPanelLib.ClientAccessService.CTelegramLogDto.datasource" />
+    <None Include="Properties\DataSources\CarLocationPanelLib.ClientAccessService.CWorkQueueDto.datasource" />
+    <None Include="Properties\DataSources\CarLocationPanelLib.ClientAccessService.struBillInfo.datasource" />
+    <None Include="Properties\DataSources\CarLocationPanelLib.ClientAccessService.struCustomerInfo.datasource" />
+    <None Include="Properties\DataSources\System.Drawing.Rectangle.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\PushService\DatabaseManagementLib.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PushService\IEGClientSystemProcess.PushService.EnmFaultType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PushService\service.wsdl" />
+    <None Include="Service References\PushService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PushService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PushService\TypedefLib.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QueryService\CQueryService.wsdl" />
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.CCarLocationDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.CDeviceFaultDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.CDeviceFaultLogDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.CDeviceStatusDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.CDeviceStatusLogDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.CICCardDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.CICCardLogDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.CLedContentDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.COperatorDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.CSoundDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.CSystemLogDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.CTariffDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.CTelegramLogDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.CWorkQueueDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.EnmFaultType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.EnmLocationStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.EnmModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.EnmOperatorType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.struBillInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.struClientPara.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.struCustomerInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="aa.ico" />
+    <None Include="Service References\QueryService\QueryService.disco" />
+    <None Include="Service References\QueryService\IEGClientSystemProcess.QueryService.struICCardData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PushService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PushService\configuration.svcinfo" />
+    <None Include="Service References\PushService\configuration91.svcinfo" />
+    <None Include="Service References\QueryService\QueryService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QueryService\QueryService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QueryService\QueryService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QueryService\QueryService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QueryService\QueryService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QueryService\QueryService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QueryService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\QueryService\configuration.svcinfo" />
+    <None Include="Service References\QueryService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\PushService\" />
+    <WCFMetadataStorage Include="Service References\QueryService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WindowsFormLib\WindowsFormLib.csproj">
+      <Project>{E4AC69E8-C9F9-4A37-B303-A3B16C23FE57}</Project>
+      <Name>WindowsFormLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

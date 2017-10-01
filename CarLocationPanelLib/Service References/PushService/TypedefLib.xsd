@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TypedefLib" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TypedefLib" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="EnmFaultType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Fail" />
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Exception" />
+      <xs:enumeration value="Null" />
+      <xs:enumeration value="Wait" />
+      <xs:enumeration value="Exit" />
+      <xs:enumeration value="Add" />
+      <xs:enumeration value="NotAvailable" />
+      <xs:enumeration value="NotAutomatic" />
+      <xs:enumeration value="NotAllowed" />
+      <xs:enumeration value="NotMatch" />
+      <xs:enumeration value="FailConnection" />
+      <xs:enumeration value="FailToInsert" />
+      <xs:enumeration value="FailToUpdate" />
+      <xs:enumeration value="FailToQuery" />
+      <xs:enumeration value="FailToDelete" />
+      <xs:enumeration value="UserNameError" />
+      <xs:enumeration value="UserNameExist" />
+      <xs:enumeration value="PasswordError" />
+      <xs:enumeration value="PasswordNull" />
+      <xs:enumeration value="OPRTypeNull" />
+      <xs:enumeration value="PWNotMatch" />
+      <xs:enumeration value="LogicCardID" />
+      <xs:enumeration value="PhysicalCardID" />
+      <xs:enumeration value="NoICCardInfo" />
+      <xs:enumeration value="HasICCardInfo" />
+      <xs:enumeration value="ICCardIDNotAllowed" />
+      <xs:enumeration value="ModifyICCardID" />
+      <xs:enumeration value="FailToWriteICCard" />
+      <xs:enumeration value="FailToReadICCard" />
+      <xs:enumeration value="NoCustomerInfo" />
+      <xs:enumeration value="CarInGarage" />
+      <xs:enumeration value="NoCarInGarage" />
+      <xs:enumeration value="TaskOnICCard" />
+      <xs:enumeration value="BoundUser" />
+      <xs:enumeration value="LossORCancel" />
+      <xs:enumeration value="NoBoundCustomer" />
+      <xs:enumeration value="NotFoundEquip" />
+      <xs:enumeration value="EquipIncorrect" />
+      <xs:enumeration value="HallEquip" />
+      <xs:enumeration value="HallEnter" />
+      <xs:enumeration value="HallExit" />
+      <xs:enumeration value="HallEnterorExit" />
+      <xs:enumeration value="IsNotHallEquip" />
+      <xs:enumeration value="IsNotETVEquip" />
+      <xs:enumeration value="NotSameWareHouse" />
+      <xs:enumeration value="NotNormalCarPOSN" />
+      <xs:enumeration value="NotFoundCarPOSN" />
+      <xs:enumeration value="FixedCarPOSN" />
+      <xs:enumeration value="NotFixedCarPOSN" />
+      <xs:enumeration value="FailToSendTelegram" />
+      <xs:enumeration value="NoTariffInfo" />
+      <xs:enumeration value="FailToFixBill" />
+      <xs:enumeration value="OverCarInSize" />
+      <xs:enumeration value="InvalidEquipID" />
+      <xs:enumeration value="InvalidWareHouseID" />
+      <xs:enumeration value="InvalidFeeType" />
+      <xs:enumeration value="WorkQueueNotEmpty" />
+      <xs:enumeration value="FailToAllocETVorTV" />
+      <xs:enumeration value="HallNotCar" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnmFaultType" nillable="true" type="tns:EnmFaultType" />
+  <xs:simpleType name="EnmLocationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Init" />
+      <xs:enumeration value="Normal" />
+      <xs:enumeration value="Hall" />
+      <xs:enumeration value="Disable" />
+      <xs:enumeration value="Invalid" />
+      <xs:enumeration value="ETV" />
+      <xs:enumeration value="Temp" />
+      <xs:enumeration value="DisTemp" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnmLocationType" nillable="true" type="tns:EnmLocationType" />
+  <xs:simpleType name="EnmLocationStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Init" />
+      <xs:enumeration value="Space" />
+      <xs:enumeration value="Occupy" />
+      <xs:enumeration value="Entering" />
+      <xs:enumeration value="Outing" />
+      <xs:enumeration value="TmpFetch" />
+      <xs:enumeration value="MovingVEH" />
+      <xs:enumeration value="VehRotation" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnmLocationStatus" nillable="true" type="tns:EnmLocationStatus" />
+  <xs:simpleType name="EnmHallType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Entance">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Exit">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EnterOrExit">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnmHallType" nillable="true" type="tns:EnmHallType" />
+  <xs:complexType name="struBillInfo">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dtEndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dtStartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fActualFee" type="xs:float" />
+      <xs:element minOccurs="0" name="fPayableFee" type="xs:float" />
+      <xs:element minOccurs="0" name="fTariffNorm" type="xs:float" />
+      <xs:element minOccurs="0" name="nFeeType" type="xs:int" />
+      <xs:element minOccurs="0" name="nHallID" type="xs:int" />
+      <xs:element minOccurs="0" name="nICCardType" type="xs:int" />
+      <xs:element minOccurs="0" name="nTariffID" type="xs:int" />
+      <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+      <xs:element minOccurs="0" name="strCalculateDays" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strICCardID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strOptCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="struBillInfo" nillable="true" type="tns:struBillInfo" />
+</xs:schema>

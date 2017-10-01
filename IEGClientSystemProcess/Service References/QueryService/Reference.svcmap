@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9fef1cf8-74c8-45a0-883c-9911be800c8f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50003/AutoParkingService/QueryService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="QueryService.xsd" MetadataType="Schema" ID="20521f49-541d-4100-845f-84ef3cabb6ae" SourceId="1" SourceUrl="http://localhost:50003/AutoParkingService/QueryService?xsd=xsd3" />
+    <MetadataFile FileName="QueryService1.xsd" MetadataType="Schema" ID="cd7546a2-474b-42aa-975e-8051aad98560" SourceId="1" SourceUrl="http://localhost:50003/AutoParkingService/QueryService?xsd=xsd0" />
+    <MetadataFile FileName="QueryService2.xsd" MetadataType="Schema" ID="7b0d1b88-f131-478c-9334-ee6ea52708f6" SourceId="1" SourceUrl="http://localhost:50003/AutoParkingService/QueryService?xsd=xsd5" />
+    <MetadataFile FileName="CQueryService.wsdl" MetadataType="Wsdl" ID="89ddf5af-fc9e-4ebf-8aee-a40936b29947" SourceId="1" SourceUrl="http://localhost:50003/AutoParkingService/QueryService?wsdl" />
+    <MetadataFile FileName="QueryService3.xsd" MetadataType="Schema" ID="f0b2cb29-17e2-478b-bfaf-ed7bda74d0d8" SourceId="1" SourceUrl="http://localhost:50003/AutoParkingService/QueryService?xsd=xsd1" />
+    <MetadataFile FileName="QueryService4.xsd" MetadataType="Schema" ID="ac8da1be-0c9b-4bea-822c-7402cf5ac67f" SourceId="1" SourceUrl="http://localhost:50003/AutoParkingService/QueryService?xsd=xsd4" />
+    <MetadataFile FileName="QueryService5.xsd" MetadataType="Schema" ID="b2aea174-0b4a-415e-b873-4d479d0ef704" SourceId="1" SourceUrl="http://localhost:50003/AutoParkingService/QueryService?xsd=xsd2" />
+    <MetadataFile FileName="QueryService.disco" MetadataType="Disco" ID="945781f6-eadf-4698-95b1-4b9814d6ccff" SourceId="1" SourceUrl="http://localhost:50003/AutoParkingService/QueryService?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

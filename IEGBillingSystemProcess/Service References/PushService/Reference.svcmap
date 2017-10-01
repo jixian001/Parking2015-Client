@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="37be3fd4-aeb6-4017-bce0-9e12b5916599" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:50001/AutoParkingService/PushService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="6601eee0-d432-4e7e-b2af-71742c6d5f69" SourceId="1" SourceUrl="net.tcp://localhost:50001/AutoParkingService/PushService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="7cf9ca75-0b7b-4c73-9043-3016b20433ab" SourceId="1" SourceUrl="net.tcp://localhost:50001/AutoParkingService/PushService/mex" />
+    <MetadataFile FileName="DatabaseManagementLib.xsd" MetadataType="Schema" ID="7404d478-df12-47e0-b7ce-c100ba8d561f" SourceId="1" SourceUrl="net.tcp://localhost:50001/AutoParkingService/PushService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="00aaafc6-90f6-4b68-b2b2-1bf33ba10778" SourceId="1" SourceUrl="net.tcp://localhost:50001/AutoParkingService/PushService/mex" />
+    <MetadataFile FileName="TypedefLib.xsd" MetadataType="Schema" ID="4edb8d9b-2c09-4b40-9616-1f07c90ed73f" SourceId="1" SourceUrl="net.tcp://localhost:50001/AutoParkingService/PushService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/TypedefLib" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" />
+  <xs:element name="Register">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strHost" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Dispose">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckService">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckServiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckServiceResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyICCardID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strPhysicalCardID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyICCardIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="ModifyICCardIDResult" type="q1:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyICCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strOldICCardID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strNewICCardID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyICCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="ModifyICCardResult" type="q2:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyPhyCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strPhysicalCardID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strICCardID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyPhyCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="ModifyPhyCardResult" type="q3:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ManualVEHExit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element minOccurs="0" name="strCarPOSNAddr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ManualVEHExitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="ManualVEHExitResult" type="q4:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ManualVEHEntry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="carPOSNTable" nillable="true" type="q5:CCarLocationDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ManualVEHEntryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="ManualVEHEntryResult" type="q6:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ManualMoveVEH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element minOccurs="0" name="strSrcCarPOSNAddr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDestCarPOSNAddr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ManualMoveVEHResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="ManualMoveVEHResult" type="q7:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyCarPOSNType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element minOccurs="0" name="strCarPOSNAddr" nillable="true" type="xs:string" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="enmCarPOSNType" type="q8:EnmLocationType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyCarPOSNTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="ModifyCarPOSNTypeResult" type="q9:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitAllCarPOSN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitAllCarPOSNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="InitAllCarPOSNResult" type="q10:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyAllCarPOSNType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="enmCarPOSNType" type="q11:EnmLocationType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyAllCarPOSNTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="ModifyAllCarPOSNTypeResult" type="q12:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyCarPOSNStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element minOccurs="0" name="strCarPOSNAddr" nillable="true" type="xs:string" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="enmCarPOSNStatus" type="q13:EnmLocationStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyCarPOSNStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="ModifyCarPOSNStatusResult" type="q14:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDeviceMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element minOccurs="0" name="nDeviceID" type="xs:int" />
+        <xs:element minOccurs="0" name="nIsavailable" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDeviceModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="SetDeviceModeResult" type="q15:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetHallType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element minOccurs="0" name="nHallID" type="xs:int" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="enmHallType" type="q16:EnmHallType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetHallTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="SetHallTypeResult" type="q17:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsHasTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsHasTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsHasTaskResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TmpFetch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strICCardID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element minOccurs="0" name="nHallID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TmpFetchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="TmpFetchResult" type="q18:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VehicleExit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element minOccurs="0" name="strSrcPOSN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strHallID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VehicleExitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="VehicleExitResult" type="q19:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VehicleExitForBilling">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strICCardID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nHallID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VehicleExitForBillingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="VehicleExitForBillingResult" type="q20:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VehicleMove">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element minOccurs="0" name="strSrcPOSN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDestPOSN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VehicleMoveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="VehicleMoveResult" type="q21:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EquipMove">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element minOccurs="0" name="nEquipID" type="xs:int" />
+        <xs:element minOccurs="0" name="strDestPOSN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EquipMoveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="EquipMoveResult" type="q22:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartWorkQueue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="deviceStatusTBL" nillable="true" type="q23:CDeviceStatusDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartWorkQueueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="StartWorkQueueResult" type="q24:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VehicleExitSubscribe">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strICCardID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element minOccurs="0" name="nHallID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VehicleExitSubscribeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="VehicleExitSubscribeResult" type="q25:EnmFaultType" />
+        <xs:element minOccurs="0" name="nHallID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VehicleRotation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VehicleRotationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="VehicleRotationResult" type="q26:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VehicleRotationByAddr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element minOccurs="0" name="strCarPOSN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VehicleRotationByAddrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="VehicleRotationByAddrResult" type="q27:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HandCompleteTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="warehouse" type="xs:int" />
+        <xs:element minOccurs="0" name="code" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HandCompleteTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="HandCompleteTaskResult" type="q28:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HandResetTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="warehouse" type="xs:int" />
+        <xs:element minOccurs="0" name="code" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HandResetTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="HandResetTaskResult" type="q29:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitDeviceFault">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="deviceFaultTBL" nillable="true" type="q30:CDeviceFaultDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitDeviceFaultResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MuroDeviceTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="warehouse" type="xs:int" />
+        <xs:element minOccurs="0" name="code" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MuroDeviceTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MuroDeviceTaskResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PayFeesAndTakeCar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="billInfo" type="q31:struBillInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PayFeesAndTakeCarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="PayFeesAndTakeCarResult" type="q32:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Push">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objTable" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

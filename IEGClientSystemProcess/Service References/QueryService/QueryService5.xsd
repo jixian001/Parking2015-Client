@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfCLedContentDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CLedContentDto" nillable="true" type="tns:CLedContentDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCLedContentDto" nillable="true" type="tns:ArrayOfCLedContentDto" />
+  <xs:complexType name="CLedContentDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="ledcontent" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CLedContentDto" nillable="true" type="tns:CLedContentDto" />
+  <xs:complexType name="ArrayOfCWorkQueueDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CWorkQueueDto" nillable="true" type="tns:CWorkQueueDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCWorkQueueDto" nillable="true" type="tns:ArrayOfCWorkQueueDto" />
+  <xs:complexType name="CWorkQueueDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="devicecode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="warehouse" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="iccode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="swipecount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="waitsendtelegram" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="priorityid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tasktype" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CWorkQueueDto" nillable="true" type="tns:CWorkQueueDto" />
+  <xs:complexType name="ArrayOfCOperatorDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="COperatorDto" nillable="true" type="tns:COperatorDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCOperatorDto" nillable="true" type="tns:ArrayOfCOperatorDto" />
+  <xs:complexType name="COperatorDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="optcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="optname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="optpassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="optphone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="optaddr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="opttype" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="optpermission" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="COperatorDto" nillable="true" type="tns:COperatorDto" />
+  <xs:complexType name="CICCardDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="iccode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="oldiccode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="phycode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ictype" type="xs:int" />
+      <xs:element minOccurs="0" name="icstatus" type="xs:int" />
+      <xs:element minOccurs="0" name="icnewtime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="iclosstime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="iclogouttime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="icstarttime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="icdeadline" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="carlocaddr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warehouse" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="userid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tariffid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="priorityid" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CICCardDto" nillable="true" type="tns:CICCardDto" />
+  <xs:complexType name="CCarLocationDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="carlocaddr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warehouse" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="carlocside" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="carloccolumn" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="carloclayer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="carlocstatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="carloctype" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="carlocsize" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="iccode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="carwheelbase" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="carsize" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="isbackup" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="carintime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="priorityid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="region" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="carnumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="carpicture" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="direction" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="overallLg" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="overhang" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="carweight" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="offcenter" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="rearwheeldis" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CCarLocationDto" nillable="true" type="tns:CCarLocationDto" />
+  <xs:complexType name="ArrayOfCCarLocationDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CCarLocationDto" nillable="true" type="tns:CCarLocationDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCCarLocationDto" nillable="true" type="tns:ArrayOfCCarLocationDto" />
+  <xs:complexType name="CDeviceStatusDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="warehouse" type="xs:int" />
+      <xs:element minOccurs="0" name="devicecode" type="xs:int" />
+      <xs:element minOccurs="0" name="tasktype" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="isable" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="isavailable" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="devicemode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="deviceaddr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="devicetype" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="halltype" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="region" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="isgetoutcar" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="iccode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="instep" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="outstep" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="runstep" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="warehousechange" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="devicelayer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="prevnode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="currentnode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="queueprevnode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="queuecurrentnode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="scrloc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="desccloc" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CDeviceStatusDto" nillable="true" type="tns:CDeviceStatusDto" />
+  <xs:complexType name="ArrayOfCDeviceFaultDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CDeviceFaultDto" nillable="true" type="tns:CDeviceFaultDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCDeviceFaultDto" nillable="true" type="tns:ArrayOfCDeviceFaultDto" />
+  <xs:complexType name="CDeviceFaultDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="faultdescp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="faultaddress" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="color" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="isable" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="devicecode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="warehouse" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CDeviceFaultDto" nillable="true" type="tns:CDeviceFaultDto" />
+  <xs:complexType name="ArrayOfCDeviceStatusDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CDeviceStatusDto" nillable="true" type="tns:CDeviceStatusDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCDeviceStatusDto" nillable="true" type="tns:ArrayOfCDeviceStatusDto" />
+  <xs:complexType name="ArrayOfCICCardLogDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CICCardLogDto" nillable="true" type="tns:CICCardLogDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCICCardLogDto" nillable="true" type="tns:ArrayOfCICCardLogDto" />
+  <xs:complexType name="CICCardLogDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="iccode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ictype" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="starttime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="endtime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="calculatedays" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="feetype" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tariffnorm" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="payablefee" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="actualfee" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="optcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="paymenttime" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CICCardLogDto" nillable="true" type="tns:CICCardLogDto" />
+  <xs:complexType name="CSystemLogDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="logid" type="xs:int" />
+      <xs:element minOccurs="0" name="logdescp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="curtime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="optcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="optname" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSystemLogDto" nillable="true" type="tns:CSystemLogDto" />
+  <xs:complexType name="ArrayOfCSystemLogDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CSystemLogDto" nillable="true" type="tns:CSystemLogDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCSystemLogDto" nillable="true" type="tns:ArrayOfCSystemLogDto" />
+  <xs:complexType name="ArrayOfCTelegramLogDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CTelegramLogDto" nillable="true" type="tns:CTelegramLogDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCTelegramLogDto" nillable="true" type="tns:ArrayOfCTelegramLogDto" />
+  <xs:complexType name="CTelegramLogDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="time" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="logtype" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="telegramhead" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="devicecode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="iccode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="carinfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="slotinfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="srcaddr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="destaddr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="telegramid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="direction" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="warehouse" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="destdirection" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CTelegramLogDto" nillable="true" type="tns:CTelegramLogDto" />
+  <xs:complexType name="ArrayOfCDeviceStatusLogDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CDeviceStatusLogDto" nillable="true" type="tns:CDeviceStatusLogDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCDeviceStatusLogDto" nillable="true" type="tns:ArrayOfCDeviceStatusLogDto" />
+  <xs:complexType name="CDeviceStatusLogDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="warehouse" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="devicecode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="deviceaddr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="time" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="devicemode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="devicetype" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="halltype" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="curtasktype" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="isavailable" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="isgetoutcar" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="instep" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="outstep" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="isable" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="runstep" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CDeviceStatusLogDto" nillable="true" type="tns:CDeviceStatusLogDto" />
+  <xs:complexType name="CDeviceFaultLogDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="warehouse" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="devicecode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="faultdescp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="time" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="optcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="color" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CDeviceFaultLogDto" nillable="true" type="tns:CDeviceFaultLogDto" />
+  <xs:complexType name="ArrayOfCDeviceFaultLogDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CDeviceFaultLogDto" nillable="true" type="tns:CDeviceFaultLogDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCDeviceFaultLogDto" nillable="true" type="tns:ArrayOfCDeviceFaultLogDto" />
+  <xs:complexType name="ArrayOfCSoundDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CSoundDto" nillable="true" type="tns:CSoundDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCSoundDto" nillable="true" type="tns:ArrayOfCSoundDto" />
+  <xs:complexType name="CSoundDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="soundcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="soundname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="soundcontent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="soundishand" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSoundDto" nillable="true" type="tns:CSoundDto" />
+  <xs:complexType name="ArrayOfCTariffDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CTariffDto" nillable="true" type="tns:CTariffDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCTariffDto" nillable="true" type="tns:ArrayOfCTariffDto" />
+  <xs:complexType name="CTariffDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="iccardtype" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="feetype" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tariffdescp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="isworkday" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="workpeakperiod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="workdayquotafee" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="workpeakfirstunit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="worknonpeakfirstunit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="workpeakinunitfee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="workpeakoutunitfee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="worknonpeakinunitfee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="worknonpeakoutunitfee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nonworkpeakperiod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nonworkdayquotafee" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="nonworkpeakfirstunit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nonworknonpeakfirstunit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nonworkpeakinunitfee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nonworkpeakoutunitfee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nonworknonpeakinunitfee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nonworknonpeakoutunitfee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fee" nillable="true" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CTariffDto" nillable="true" type="tns:CTariffDto" />
+</xs:schema>

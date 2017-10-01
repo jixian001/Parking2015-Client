@@ -1,0 +1,607 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CPushService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IPushService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/TypedefLib" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPushService_Register_InputMessage">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_Dispose_InputMessage">
+    <wsdl:part name="parameters" element="tns:Dispose" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_CheckService_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckService" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_CheckService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_ModifyICCardID_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyICCardID" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_ModifyICCardID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyICCardIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_ModifyICCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyICCard" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_ModifyICCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyICCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_ModifyPhyCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyPhyCard" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_ModifyPhyCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyPhyCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_ManualVEHExit_InputMessage">
+    <wsdl:part name="parameters" element="tns:ManualVEHExit" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_ManualVEHExit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ManualVEHExitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_ManualVEHEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:ManualVEHEntry" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_ManualVEHEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ManualVEHEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_ManualMoveVEH_InputMessage">
+    <wsdl:part name="parameters" element="tns:ManualMoveVEH" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_ManualMoveVEH_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ManualMoveVEHResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_ModifyCarPOSNType_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyCarPOSNType" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_ModifyCarPOSNType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyCarPOSNTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_InitAllCarPOSN_InputMessage">
+    <wsdl:part name="parameters" element="tns:InitAllCarPOSN" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_InitAllCarPOSN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitAllCarPOSNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_ModifyAllCarPOSNType_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyAllCarPOSNType" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_ModifyAllCarPOSNType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyAllCarPOSNTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_ModifyCarPOSNStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyCarPOSNStatus" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_ModifyCarPOSNStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyCarPOSNStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_SetDeviceMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetDeviceMode" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_SetDeviceMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetDeviceModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_SetHallType_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetHallType" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_SetHallType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetHallTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_IsHasTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsHasTask" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_IsHasTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsHasTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_TmpFetch_InputMessage">
+    <wsdl:part name="parameters" element="tns:TmpFetch" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_TmpFetch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TmpFetchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_VehicleExit_InputMessage">
+    <wsdl:part name="parameters" element="tns:VehicleExit" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_VehicleExit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VehicleExitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_VehicleExitForBilling_InputMessage">
+    <wsdl:part name="parameters" element="tns:VehicleExitForBilling" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_VehicleExitForBilling_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VehicleExitForBillingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_VehicleMove_InputMessage">
+    <wsdl:part name="parameters" element="tns:VehicleMove" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_VehicleMove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VehicleMoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_EquipMove_InputMessage">
+    <wsdl:part name="parameters" element="tns:EquipMove" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_EquipMove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EquipMoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_StartWorkQueue_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartWorkQueue" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_StartWorkQueue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartWorkQueueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_VehicleExitSubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:VehicleExitSubscribe" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_VehicleExitSubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VehicleExitSubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_VehicleRotation_InputMessage">
+    <wsdl:part name="parameters" element="tns:VehicleRotation" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_VehicleRotation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VehicleRotationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_VehicleRotationByAddr_InputMessage">
+    <wsdl:part name="parameters" element="tns:VehicleRotationByAddr" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_VehicleRotationByAddr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VehicleRotationByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_HandCompleteTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:HandCompleteTask" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_HandCompleteTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HandCompleteTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_HandResetTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:HandResetTask" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_HandResetTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HandResetTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_InitDeviceFault_InputMessage">
+    <wsdl:part name="parameters" element="tns:InitDeviceFault" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_InitDeviceFault_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitDeviceFaultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_MuroDeviceTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:MuroDeviceTask" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_MuroDeviceTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MuroDeviceTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_PayFeesAndTakeCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PayFeesAndTakeCar" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_PayFeesAndTakeCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PayFeesAndTakeCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushService_Push_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:Push" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="IPushService">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Register">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/Register" message="tns:IPushService_Register_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Dispose">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/Dispose" message="tns:IPushService_Dispose_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="CheckService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/CheckService" message="tns:IPushService_CheckService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/CheckServiceResponse" message="tns:IPushService_CheckService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ModifyICCardID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/ModifyICCardID" message="tns:IPushService_ModifyICCardID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/ModifyICCardIDResponse" message="tns:IPushService_ModifyICCardID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ModifyICCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/ModifyICCard" message="tns:IPushService_ModifyICCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/ModifyICCardResponse" message="tns:IPushService_ModifyICCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ModifyPhyCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/ModifyPhyCard" message="tns:IPushService_ModifyPhyCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/ModifyPhyCardResponse" message="tns:IPushService_ModifyPhyCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ManualVEHExit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/ManualVEHExit" message="tns:IPushService_ManualVEHExit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/ManualVEHExitResponse" message="tns:IPushService_ManualVEHExit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ManualVEHEntry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/ManualVEHEntry" message="tns:IPushService_ManualVEHEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/ManualVEHEntryResponse" message="tns:IPushService_ManualVEHEntry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ManualMoveVEH">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/ManualMoveVEH" message="tns:IPushService_ManualMoveVEH_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/ManualMoveVEHResponse" message="tns:IPushService_ManualMoveVEH_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ModifyCarPOSNType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/ModifyCarPOSNType" message="tns:IPushService_ModifyCarPOSNType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/ModifyCarPOSNTypeResponse" message="tns:IPushService_ModifyCarPOSNType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InitAllCarPOSN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/InitAllCarPOSN" message="tns:IPushService_InitAllCarPOSN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/InitAllCarPOSNResponse" message="tns:IPushService_InitAllCarPOSN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ModifyAllCarPOSNType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/ModifyAllCarPOSNType" message="tns:IPushService_ModifyAllCarPOSNType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/ModifyAllCarPOSNTypeResponse" message="tns:IPushService_ModifyAllCarPOSNType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ModifyCarPOSNStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/ModifyCarPOSNStatus" message="tns:IPushService_ModifyCarPOSNStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/ModifyCarPOSNStatusResponse" message="tns:IPushService_ModifyCarPOSNStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetDeviceMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/SetDeviceMode" message="tns:IPushService_SetDeviceMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/SetDeviceModeResponse" message="tns:IPushService_SetDeviceMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetHallType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/SetHallType" message="tns:IPushService_SetHallType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/SetHallTypeResponse" message="tns:IPushService_SetHallType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="IsHasTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/IsHasTask" message="tns:IPushService_IsHasTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/IsHasTaskResponse" message="tns:IPushService_IsHasTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="TmpFetch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/TmpFetch" message="tns:IPushService_TmpFetch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/TmpFetchResponse" message="tns:IPushService_TmpFetch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="VehicleExit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/VehicleExit" message="tns:IPushService_VehicleExit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/VehicleExitResponse" message="tns:IPushService_VehicleExit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="VehicleExitForBilling">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/VehicleExitForBilling" message="tns:IPushService_VehicleExitForBilling_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/VehicleExitForBillingResponse" message="tns:IPushService_VehicleExitForBilling_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="VehicleMove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/VehicleMove" message="tns:IPushService_VehicleMove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/VehicleMoveResponse" message="tns:IPushService_VehicleMove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="EquipMove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/EquipMove" message="tns:IPushService_EquipMove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/EquipMoveResponse" message="tns:IPushService_EquipMove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="StartWorkQueue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/StartWorkQueue" message="tns:IPushService_StartWorkQueue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/StartWorkQueueResponse" message="tns:IPushService_StartWorkQueue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="VehicleExitSubscribe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/VehicleExitSubscribe" message="tns:IPushService_VehicleExitSubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/VehicleExitSubscribeResponse" message="tns:IPushService_VehicleExitSubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="VehicleRotation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/VehicleRotation" message="tns:IPushService_VehicleRotation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/VehicleRotationResponse" message="tns:IPushService_VehicleRotation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="VehicleRotationByAddr">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/VehicleRotationByAddr" message="tns:IPushService_VehicleRotationByAddr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/VehicleRotationByAddrResponse" message="tns:IPushService_VehicleRotationByAddr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="HandCompleteTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/HandCompleteTask" message="tns:IPushService_HandCompleteTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/HandCompleteTaskResponse" message="tns:IPushService_HandCompleteTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="HandResetTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/HandResetTask" message="tns:IPushService_HandResetTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/HandResetTaskResponse" message="tns:IPushService_HandResetTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InitDeviceFault">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/InitDeviceFault" message="tns:IPushService_InitDeviceFault_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/InitDeviceFaultResponse" message="tns:IPushService_InitDeviceFault_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="MuroDeviceTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/MuroDeviceTask" message="tns:IPushService_MuroDeviceTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/MuroDeviceTaskResponse" message="tns:IPushService_MuroDeviceTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PayFeesAndTakeCar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushService/PayFeesAndTakeCar" message="tns:IPushService_PayFeesAndTakeCar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/PayFeesAndTakeCarResponse" message="tns:IPushService_PayFeesAndTakeCar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Push">
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushService/Push" message="tns:IPushService_Push_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IPushService" type="tns:IPushService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IPushService_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Register">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/Register" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Dispose">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/Dispose" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="CheckService">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/CheckService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyICCardID">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/ModifyICCardID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyICCard">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/ModifyICCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPhyCard">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/ModifyPhyCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ManualVEHExit">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/ManualVEHExit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ManualVEHEntry">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/ManualVEHEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ManualMoveVEH">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/ManualMoveVEH" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCarPOSNType">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/ModifyCarPOSNType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitAllCarPOSN">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/InitAllCarPOSN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyAllCarPOSNType">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/ModifyAllCarPOSNType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCarPOSNStatus">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/ModifyCarPOSNStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDeviceMode">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/SetDeviceMode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetHallType">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/SetHallType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsHasTask">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/IsHasTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TmpFetch">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/TmpFetch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VehicleExit">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/VehicleExit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VehicleExitForBilling">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/VehicleExitForBilling" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VehicleMove">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/VehicleMove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EquipMove">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/EquipMove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartWorkQueue">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/StartWorkQueue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VehicleExitSubscribe">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/VehicleExitSubscribe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VehicleRotation">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/VehicleRotation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VehicleRotationByAddr">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/VehicleRotationByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HandCompleteTask">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/HandCompleteTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HandResetTask">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/HandResetTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitDeviceFault">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/InitDeviceFault" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MuroDeviceTask">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/MuroDeviceTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PayFeesAndTakeCar">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/PayFeesAndTakeCar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Push">
+      <soap12:operation soapAction="http://tempuri.org/IPushService/Push" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CPushService">
+    <wsdl:port name="NetTcpBinding_IPushService" binding="tns:NetTcpBinding_IPushService">
+      <soap12:address location="net.tcp://localhost:50001/AutoParkingService/PushService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:50001/AutoParkingService/PushService</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

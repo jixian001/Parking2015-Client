@@ -1,0 +1,1066 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50003/AutoParkingService/QueryService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" />
+  <xs:import schemaLocation="http://localhost:50003/AutoParkingService/QueryService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TypedefLib" />
+  <xs:import schemaLocation="http://localhost:50003/AutoParkingService/QueryService?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:50003/AutoParkingService/QueryService?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
+  <xs:element name="GetLEDContentList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLEDContentListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="GetLEDContentListResult" nillable="true" type="q1:ArrayOfCLedContentDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLEDContentDtoList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="lstLedContent" nillable="true" type="q2:ArrayOfCLedContentDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLEDContentDtoListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateLEDContentDtoListResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSendTelegramQueue">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSendTelegramQueueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="GetSendTelegramQueueResult" nillable="true" type="q3:ArrayOfCWorkQueueDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSendTelegramQueueByEquipID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element minOccurs="0" name="nEquipID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSendTelegramQueueByEquipIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="GetSendTelegramQueueByEquipIDResult" nillable="true" type="q4:ArrayOfCWorkQueueDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWorkQueueObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="wid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWorkQueueObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="DeleteWorkQueueObjectResult" type="q5:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllQueueForDisp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="warehouse" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllQueueForDispResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="GetAllQueueForDispResult" nillable="true" type="q6:ArrayOfCWorkQueueDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAllWorkQueue">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAllWorkQueueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="DeleteAllWorkQueueResult" type="q7:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserSetFixCardOutLimit">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserSetFixCardOutLimitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUserSetFixCardOutLimitResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetUserSetFixCardOutLimit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetUserSetFixCardOutLimitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetUserSetFixCardOutLimitResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConfig">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="GetConfigResult" type="q8:struClientPara" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOperatorList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="lstOperatorDto" nillable="true" type="q9:ArrayOfCOperatorDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOperatorListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetOperatorListResult" type="xs:boolean" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="lstOperatorDto" nillable="true" type="q10:ArrayOfCOperatorDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="operatorTBL" nillable="true" type="q11:COperatorDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="CheckPasswordResult" type="q12:EnmFaultType" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="operatorTBL" nillable="true" type="q13:COperatorDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="operatorTBL" nillable="true" type="q14:COperatorDto" />
+        <xs:element minOccurs="0" name="strNewPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="UpdatePasswordResult" type="q15:EnmFaultType" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="operatorTBL" nillable="true" type="q16:COperatorDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOperator">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="operatorTBL" nillable="true" type="q17:COperatorDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOperatorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="AddOperatorResult" type="q18:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOperatorType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strUserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOperatorTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="GetOperatorTypeResult" type="q19:EnmOperatorType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteOperator">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="operatorTBL" nillable="true" type="q20:COperatorDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteOperatorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteOperatorResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadICCardData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadICCardDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="ReadICCardDataResult" type="q21:EnmFaultType" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="struDataOut" type="q22:struICCardData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadICCard">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadICCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="ReadICCardResult" type="q23:EnmFaultType" />
+        <xs:element minOccurs="0" name="strPhysicalCardID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strICCardID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewICCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strPhysicalCardID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewICCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="AddNewICCardResult" type="q24:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryICCardInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="icCardTable" nillable="true" type="q25:CICCardDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryICCardInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="QueryICCardInfoResult" type="q26:EnmFaultType" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="icCardTable" nillable="true" type="q27:CICCardDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryICCardInfoByAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="icCardTable" nillable="true" type="q28:CICCardDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryICCardInfoByAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="QueryICCardInfoByAddressResult" type="q29:EnmFaultType" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="icCardTable" nillable="true" type="q30:CICCardDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryICCardInfoByPhyID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="icCardTable" nillable="true" type="q31:CICCardDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryICCardInfoByPhyIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="QueryICCardInfoByPhyIDResult" type="q32:EnmFaultType" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="icCardTable" nillable="true" type="q33:CICCardDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryICCodeByPhysic">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="physic" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryICCodeByPhysicResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QueryICCodeByPhysicResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateICCardInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="icCardTable" nillable="true" type="q34:CICCardDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateICCardInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateICCardInfoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFixReservedSizeCount">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFixReservedSizeCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetFixReservedSizeCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BatchModifyICCardDeadLine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nDelayDays" type="xs:int" />
+        <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstICCardID" nillable="true" type="q35:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BatchModifyICCardDeadLineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="BatchModifyICCardDeadLineResult" type="q36:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BatchModifyICCardTariffID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nTariffID" type="xs:int" />
+        <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstICCardID" nillable="true" type="q37:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BatchModifyICCardTariffIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="BatchModifyICCardTariffIDResult" type="q38:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryCUSTInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="lstStruCUSTInfo" nillable="true" type="q39:ArrayOfstruCustomerInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryCUSTInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QueryCUSTInfoResult" type="xs:boolean" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="lstStruCUSTInfo" nillable="true" type="q40:ArrayOfstruCustomerInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryCUSTInfoByStr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="enmQueryFlag" type="q41:EnmQueryFlag" />
+        <xs:element minOccurs="0" name="strInfo" nillable="true" type="xs:string" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="lstStruCUSTInfo" nillable="true" type="q42:ArrayOfstruCustomerInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryCUSTInfoByStrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="lstStruCUSTInfo" nillable="true" type="q43:ArrayOfstruCustomerInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BoundICCardForCUST">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="customerInfo" type="q44:struCustomerInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BoundICCardForCUSTResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="BoundICCardForCUSTResult" type="q45:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyCUSTInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="customerInfo" type="q46:struCustomerInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyCUSTInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="ModifyCUSTInfoResult" type="q47:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strICCardID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="DeleteCustomerResult" type="q48:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryCarPOSNByAddr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="carLOCTable" nillable="true" type="q49:CCarLocationDto" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="nICCardType" nillable="true" type="q50:CICCardDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryCarPOSNByAddrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="QueryCarPOSNByAddrResult" type="q51:EnmFaultType" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="carLOCTable" nillable="true" type="q52:CCarLocationDto" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="nICCardType" nillable="true" type="q53:CICCardDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryCarPOSNByWareHouse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryCarPOSNByWareHouseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="QueryCarPOSNByWareHouseResult" nillable="true" type="q54:ArrayOfCCarLocationDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryCarPOSNByCardID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strICCardID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryCarPOSNByCardIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="QueryCarPOSNByCardIDResult" type="q55:EnmFaultType" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="carLocatioTBL" nillable="true" type="q56:CCarLocationDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCarPOSNCountByType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element minOccurs="0" name="nCarPOSNType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCarPOSNCountByTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCarPOSNCountByTypeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCarPOSNCountByStat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element minOccurs="0" name="nCarPOSNType" type="xs:int" />
+        <xs:element minOccurs="0" name="nCarPOSNStatus" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCarPOSNCountByStatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCarPOSNCountByStatResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCarPOSNFreeOccupyCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="rectVehCount" type="q57:Rectangle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCarPOSNFreeOccupyCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="rectVehCount" type="q58:Rectangle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCarPLSNStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="enmLocationStatus" type="q59:EnmLocationStatus" />
+        <xs:element minOccurs="0" name="strICCardID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="enmICType" type="q60:EnmICCardType" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="enmICStatus" type="q61:EnmICCardStatus" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="enmFeeType" type="q62:EnmFeeType" />
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="enmTask" type="q63:EnmTaskType" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="enmSwipe" type="q64:EnmSwipeCount" />
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="enmFlow" type="q65:EnmFlowNodeDescp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCarPLSNStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="enmLocationStatus" type="q66:EnmLocationStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element minOccurs="0" name="nDeviceID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="GetDeviceModeResult" type="q67:EnmModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element minOccurs="0" name="nDeviceCode" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="deviceStatus" nillable="true" type="q68:CDeviceStatusDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceStatusByAddr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element minOccurs="0" name="nDeviceAddr" nillable="true" type="xs:string" />
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="enmSMGType" type="q69:EnmSMGType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceStatusByAddrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="deviceStatus" nillable="true" type="q70:CDeviceStatusDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceFault">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element minOccurs="0" name="nEquipID" type="xs:int" />
+        <xs:element minOccurs="0" name="strFaultDesc" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceFaultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="lstDeviceFault" nillable="true" type="q71:ArrayOfCDeviceFaultDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceIDList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="enmSMGType" type="q72:EnmSMGType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceIDListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetDeviceIDListResult" nillable="true" type="q73:ArrayOfanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceStatusList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceStatusListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="GetDeviceStatusListResult" nillable="true" type="q74:ArrayOfCDeviceStatusDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryWorkQueue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element minOccurs="0" name="nEquipID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryWorkQueueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="QueryWorkQueueResult" nillable="true" type="q75:ArrayOfCWorkQueueDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWorkQueue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+        <xs:element minOccurs="0" name="nEquipID" type="xs:int" />
+        <xs:element minOccurs="0" name="strICCardID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWorkQueueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="DeleteWorkQueueResult" type="q76:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifWorkQueue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSrcICCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDestICCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifWorkQueueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="ModifWorkQueueResult" type="q77:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetICCardLogList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetICCardLogListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="GetICCardLogListResult" nillable="true" type="q78:ArrayOfCICCardLogDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertSysLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="systemLogeTBL" nillable="true" type="q79:CSystemLogDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertSysLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertSysLogResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSystemLogList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSystemLogListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="GetSystemLogListResult" nillable="true" type="q80:ArrayOfCSystemLogDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTelegramLogList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTelegramLogListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="GetTelegramLogListResult" nillable="true" type="q81:ArrayOfCTelegramLogDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceStatusLogList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceStatusLogListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="GetDeviceStatusLogListResult" nillable="true" type="q82:ArrayOfCDeviceStatusLogDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertDeviceFaultLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="logTBL" nillable="true" type="q83:CDeviceFaultLogDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertDeviceFaultLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertDeviceFaultLogResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceFaultLogList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceFaultLogListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="GetDeviceFaultLogListResult" nillable="true" type="q84:ArrayOfCDeviceFaultLogDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetICCardLogListByContent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="dtStart" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtEnd" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="strContent" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetICCardLogListByContentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="GetICCardLogListByContentResult" nillable="true" type="q85:ArrayOfCICCardLogDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSystemLogListByContent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="dtStart" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtEnd" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="strContent" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSystemLogListByContentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="GetSystemLogListByContentResult" nillable="true" type="q86:ArrayOfCSystemLogDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTelegramLogListByContent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="dtStart" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtEnd" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="strContent" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTelegramLogListByContentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="GetTelegramLogListByContentResult" nillable="true" type="q87:ArrayOfCTelegramLogDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTelegramLogListByPLCContent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="dtStart" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtEnd" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="nPLCID" type="xs:int" />
+        <xs:element minOccurs="0" name="strContent" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTelegramLogListByPLCContentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="GetTelegramLogListByPLCContentResult" nillable="true" type="q88:ArrayOfCTelegramLogDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceStatusLogListByContent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="dtStart" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtEnd" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="strContent" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceStatusLogListByContentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="GetDeviceStatusLogListByContentResult" nillable="true" type="q89:ArrayOfCDeviceStatusLogDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceFaultLogListByContent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="dtStart" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtEnd" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="strContent" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceFaultLogListByContentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="GetDeviceFaultLogListByContentResult" nillable="true" type="q90:ArrayOfCDeviceFaultLogDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSoundList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSoundListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="GetSoundListResult" nillable="true" type="q91:ArrayOfCSoundDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSoundDto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="sound" nillable="true" type="q92:CSoundDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSoundDtoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateSoundDtoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSoundDtoList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="lstSound" nillable="true" type="q93:ArrayOfCSoundDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSoundDtoListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateSoundDtoListResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskTypeList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskTypeListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="GetTaskTypeListResult" nillable="true" type="q94:ArrayOfCDeviceStatusDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTariffList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTariffListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="GetTariffListResult" nillable="true" type="q95:ArrayOfCTariffDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTariff">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="tariff" nillable="true" type="q96:CTariffDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTariffResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="SaveTariffResult" type="q97:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTariff">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="tariff" nillable="true" type="q98:CTariffDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTariffResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="DeleteTariffResult" type="q99:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAndQueryParkingInfoB">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="struBillInfo" type="q100:struBillInfo" />
+        <xs:element minOccurs="0" name="region" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAndQueryParkingInfoBResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="ReadAndQueryParkingInfoBResult" type="q101:EnmFaultType" />
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="struBillInfo" type="q102:struBillInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAndQueryParkingInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="struBillInfo" type="q103:struBillInfo" />
+        <xs:element minOccurs="0" name="region" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAndQueryParkingInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="ReadAndQueryParkingInfoResult" type="q104:EnmFaultType" />
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="struBillInfo" type="q105:struBillInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryParkingInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="struBillInfo" type="q106:struBillInfo" />
+        <xs:element minOccurs="0" name="region" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryParkingInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="QueryParkingInfoResult" type="q107:EnmFaultType" />
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="struBillInfo" type="q108:struBillInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTariffByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nTariffID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTariffByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/DatabaseManagementLib" minOccurs="0" name="GetTariffByIDResult" nillable="true" type="q109:CTariffDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyLEDContent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strLEDOld" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLEDNew" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyLEDContentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/TypedefLib" minOccurs="0" name="ModifyLEDContentResult" type="q110:EnmFaultType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

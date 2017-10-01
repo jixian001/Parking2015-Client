@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TypedefLib" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TypedefLib" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50003/AutoParkingService/QueryService?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:50003/AutoParkingService/QueryService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:50003/AutoParkingService/QueryService?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
+  <xs:simpleType name="EnmFaultType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Fail" />
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Exception" />
+      <xs:enumeration value="Null" />
+      <xs:enumeration value="Wait" />
+      <xs:enumeration value="Exit" />
+      <xs:enumeration value="Add" />
+      <xs:enumeration value="NotAvailable" />
+      <xs:enumeration value="NotAutomatic" />
+      <xs:enumeration value="NotAllowed" />
+      <xs:enumeration value="NotMatch" />
+      <xs:enumeration value="FailConnection" />
+      <xs:enumeration value="FailToInsert" />
+      <xs:enumeration value="FailToUpdate" />
+      <xs:enumeration value="FailToQuery" />
+      <xs:enumeration value="FailToDelete" />
+      <xs:enumeration value="UserNameError" />
+      <xs:enumeration value="UserNameExist" />
+      <xs:enumeration value="PasswordError" />
+      <xs:enumeration value="PasswordNull" />
+      <xs:enumeration value="OPRTypeNull" />
+      <xs:enumeration value="PWNotMatch" />
+      <xs:enumeration value="LogicCardID" />
+      <xs:enumeration value="PhysicalCardID" />
+      <xs:enumeration value="NoICCardInfo" />
+      <xs:enumeration value="HasICCardInfo" />
+      <xs:enumeration value="ICCardIDNotAllowed" />
+      <xs:enumeration value="ModifyICCardID" />
+      <xs:enumeration value="FailToWriteICCard" />
+      <xs:enumeration value="FailToReadICCard" />
+      <xs:enumeration value="NoCustomerInfo" />
+      <xs:enumeration value="CarInGarage" />
+      <xs:enumeration value="NoCarInGarage" />
+      <xs:enumeration value="TaskOnICCard" />
+      <xs:enumeration value="BoundUser" />
+      <xs:enumeration value="LossORCancel" />
+      <xs:enumeration value="NoBoundCustomer" />
+      <xs:enumeration value="NotFoundEquip" />
+      <xs:enumeration value="EquipIncorrect" />
+      <xs:enumeration value="HallEquip" />
+      <xs:enumeration value="HallEnter" />
+      <xs:enumeration value="HallExit" />
+      <xs:enumeration value="HallEnterorExit" />
+      <xs:enumeration value="IsNotHallEquip" />
+      <xs:enumeration value="IsNotETVEquip" />
+      <xs:enumeration value="NotSameWareHouse" />
+      <xs:enumeration value="NotNormalCarPOSN" />
+      <xs:enumeration value="NotFoundCarPOSN" />
+      <xs:enumeration value="FixedCarPOSN" />
+      <xs:enumeration value="NotFixedCarPOSN" />
+      <xs:enumeration value="FailToSendTelegram" />
+      <xs:enumeration value="NoTariffInfo" />
+      <xs:enumeration value="FailToFixBill" />
+      <xs:enumeration value="OverCarInSize" />
+      <xs:enumeration value="InvalidEquipID" />
+      <xs:enumeration value="InvalidWareHouseID" />
+      <xs:enumeration value="InvalidFeeType" />
+      <xs:enumeration value="WorkQueueNotEmpty" />
+      <xs:enumeration value="FailToAllocETVorTV" />
+      <xs:enumeration value="HallNotCar" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnmFaultType" nillable="true" type="tns:EnmFaultType" />
+  <xs:complexType name="struClientPara">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CIMCWorkerTopPRMSN" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DicHallIDDictionary" nillable="true" type="q1:ArrayOfKeyValueOfintArrayOfKeyValueOfintstruHallEquipsjgzbqRO0ty7Ep6D1" />
+      <xs:element minOccurs="0" name="ManagerTopPRMSN" type="xs:int" />
+      <xs:element minOccurs="0" name="OperatorTopPRMSN" type="xs:int" />
+      <xs:element minOccurs="0" name="OtherTopPRMSN" type="xs:int" />
+      <xs:element minOccurs="0" name="ReplacePhyCardIDFlag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowInfoFlag" type="xs:int" />
+      <xs:element minOccurs="0" name="TollKeeperTopPRMSN" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleRotationFlag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bBillingFlag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bCarImageFlag" type="xs:boolean" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="dictETVOrTVDeviceID" nillable="true" type="q2:ArrayOfKeyValueOfintArrayOfintty7Ep6D1" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="dictHallDeviceID" nillable="true" type="q3:ArrayOfKeyValueOfintArrayOfintty7Ep6D1" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstCarSizes" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstPLCID" nillable="true" type="q5:ArrayOfanyType" />
+      <xs:element minOccurs="0" name="lstPanelLayoutInfo" nillable="true" type="tns:ArrayOfstruCarPSONLayoutInfo" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objReaderPara" nillable="true" type="q6:ArrayOfanyType" />
+      <xs:element minOccurs="0" name="strAllOptPermission" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBillingTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strCarMaxSize" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strClientTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strDBConnectionInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strSQLQueryNOTECarPOSN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strSQLQueryNOTEDeviceFault" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strSQLQueryNOTEDeviceStatus" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="struClientPara" nillable="true" type="tns:struClientPara" />
+  <xs:complexType name="struHallEquips">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nCustomerLEDComID" type="xs:int" />
+      <xs:element minOccurs="0" name="nHallID" type="xs:int" />
+      <xs:element minOccurs="0" name="nICCardComID" type="xs:int" />
+      <xs:element minOccurs="0" name="nLEDAddress" type="xs:int" />
+      <xs:element minOccurs="0" name="nLEDTotalStay" type="xs:int" />
+      <xs:element minOccurs="0" name="nPlatePort" type="xs:int" />
+      <xs:element minOccurs="0" name="nWareHouseID" type="xs:int" />
+      <xs:element minOccurs="0" name="strAudioDeviceDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strHallName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLEDComID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strPlateIP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strPlatePassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strPlateUserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="struHallEquips" nillable="true" type="tns:struHallEquips" />
+  <xs:complexType name="ArrayOfstruCarPSONLayoutInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="struCarPSONLayoutInfo" type="tns:struCarPSONLayoutInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfstruCarPSONLayoutInfo" nillable="true" type="tns:ArrayOfstruCarPSONLayoutInfo" />
+  <xs:complexType name="struCarPSONLayoutInfo">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="rectInfo" type="q7:Rectangle" />
+      <xs:element minOccurs="0" name="strPanelName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="struCarPSONLayoutInfo" nillable="true" type="tns:struCarPSONLayoutInfo" />
+  <xs:simpleType name="EnmOperatorType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CIMCWorker">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Manager">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Operator">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TollKeeper">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnmOperatorType" nillable="true" type="tns:EnmOperatorType" />
+  <xs:complexType name="struICCardData">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dtFeeEndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dtFeeStartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="enmFeeType" type="tns:EnmFeeType" />
+      <xs:element minOccurs="0" name="strICCardID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="struICCardData" nillable="true" type="tns:struICCardData" />
+  <xs:simpleType name="EnmFeeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Init" />
+      <xs:enumeration value="Hour" />
+      <xs:enumeration value="Month" />
+      <xs:enumeration value="Season" />
+      <xs:enumeration value="Year" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnmFeeType" nillable="true" type="tns:EnmFeeType" />
+  <xs:complexType name="ArrayOfstruCustomerInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="struCustomerInfo" type="tns:struCustomerInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfstruCustomerInfo" nillable="true" type="tns:ArrayOfstruCustomerInfo" />
+  <xs:complexType name="struCustomerInfo">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dtDeadLine" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dtStartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="nICCardStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="nICCardType" type="xs:int" />
+      <xs:element minOccurs="0" name="nPriorityID" type="xs:int" />
+      <xs:element minOccurs="0" name="nTariffID" type="xs:int" />
+      <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+      <xs:element minOccurs="0" name="strAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strCarPOSN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strICCardID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLicPlteNbr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strMobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strTelphone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="struCustomerInfo" nillable="true" type="tns:struCustomerInfo" />
+  <xs:simpleType name="EnmQueryFlag">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Name" />
+      <xs:enumeration value="Mobile" />
+      <xs:enumeration value="LicPlteNbr" />
+      <xs:enumeration value="ICCardID" />
+      <xs:enumeration value="CarPOSN" />
+      <xs:enumeration value="Email" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnmQueryFlag" nillable="true" type="tns:EnmQueryFlag" />
+  <xs:simpleType name="EnmLocationStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Init" />
+      <xs:enumeration value="Space" />
+      <xs:enumeration value="Occupy" />
+      <xs:enumeration value="Entering" />
+      <xs:enumeration value="Outing" />
+      <xs:enumeration value="TmpFetch" />
+      <xs:enumeration value="MovingVEH" />
+      <xs:enumeration value="VehRotation" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnmLocationStatus" nillable="true" type="tns:EnmLocationStatus" />
+  <xs:simpleType name="EnmICCardType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Temp">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Fixed">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FixedLocation">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnmICCardType" nillable="true" type="tns:EnmICCardType" />
+  <xs:simpleType name="EnmICCardStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Normal">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Lost">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Disposed">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnmICCardStatus" nillable="true" type="tns:EnmICCardStatus" />
+  <xs:simpleType name="EnmTaskType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Init" />
+      <xs:enumeration value="EntryTask" />
+      <xs:enumeration value="ExitTask" />
+      <xs:enumeration value="TmpFetch" />
+      <xs:enumeration value="MoveCarTask" />
+      <xs:enumeration value="MoveEquipTask" />
+      <xs:enumeration value="VehRotationTask" />
+      <xs:enumeration value="AvoidMove" />
+      <xs:enumeration value="RetrySend" />
+      <xs:enumeration value="ForceMove" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnmTaskType" nillable="true" type="tns:EnmTaskType" />
+  <xs:simpleType name="EnmSwipeCount">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GetCar" />
+      <xs:enumeration value="SaveCarFirst" />
+      <xs:enumeration value="SaveCarSecond" />
+      <xs:enumeration value="TmpFetch" />
+      <xs:enumeration value="Oversize" />
+      <xs:enumeration value="NoSuitableSize" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnmSwipeCount" nillable="true" type="tns:EnmSwipeCount" />
+  <xs:simpleType name="EnmFlowNodeDescp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="End">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Init">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EnterHasCar">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EnterSwipeOne">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EnterSwipeTwo">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EnterCarCheck">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EnterCommandAccept">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DealLoad">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DealUnload">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EnterCarOverrun">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EnterCarLeave">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ExitSwipe">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ExitCommandAccept">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ExitHasCar">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ExitCarLeave">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">13</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MoveCarOk">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">14</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MoveEquipOk">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">15</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MoveEquipLoad">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TmpFetchOk">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">17</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TmpFetchCommandAccept">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">18</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TmpFetchHasCar">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">19</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TmpFetchCarLeave">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Load">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">21</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LoadFinish">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">22</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WillUnLoad">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">23</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UnLoad">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">24</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UnLoadFinish">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">25</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Move">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">26</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MoveFinish">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">27</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TMURO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">28</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TMURORecoryHasCar">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">29</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TMURORecoryNoCar">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">30</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnmFlowNodeDescp" nillable="true" type="tns:EnmFlowNodeDescp" />
+  <xs:simpleType name="EnmModel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Init" />
+      <xs:enumeration value="Maintenance" />
+      <xs:enumeration value="Manual" />
+      <xs:enumeration value="StandAlone" />
+      <xs:enumeration value="Automatic" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnmModel" nillable="true" type="tns:EnmModel" />
+  <xs:simpleType name="EnmSMGType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Hall">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ETV">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnmSMGType" nillable="true" type="tns:EnmSMGType" />
+  <xs:complexType name="struBillInfo">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dtEndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dtStartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fActualFee" type="xs:float" />
+      <xs:element minOccurs="0" name="fPayableFee" type="xs:float" />
+      <xs:element minOccurs="0" name="fTariffNorm" type="xs:float" />
+      <xs:element minOccurs="0" name="nFeeType" type="xs:int" />
+      <xs:element minOccurs="0" name="nHallID" type="xs:int" />
+      <xs:element minOccurs="0" name="nICCardType" type="xs:int" />
+      <xs:element minOccurs="0" name="nTariffID" type="xs:int" />
+      <xs:element minOccurs="0" name="nWareHouse" type="xs:int" />
+      <xs:element minOccurs="0" name="strCalculateDays" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strICCardID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strOptCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="struBillInfo" nillable="true" type="tns:struBillInfo" />
+</xs:schema>
